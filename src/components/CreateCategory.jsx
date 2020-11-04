@@ -23,7 +23,7 @@ class CreateCategory extends Component {
             name: this.state.category_name
         };
         try {
-            await axios.post('http://localhost:8000/api/categories/', categoryOptions, {
+            await axios.post('/api/categories/', categoryOptions, {
                 headers:{"Authorization" : `JWT ${userId}`}
             });
             setTimeout(() => {

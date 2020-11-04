@@ -43,7 +43,7 @@ class Login extends Component {
             password: password,
         };
         try {
-            const {data: response} = await axios.post('http://localhost:8000/auth/login/', loginObject);
+            const {data: response} = await axios.post('/auth/login/', loginObject);
             localStorage.setItem('_userId', response.token);
             setTimeout(() => {
                 this.setState({loading:false});
@@ -67,7 +67,7 @@ class Login extends Component {
             password2:password_2
         };
         try{
-            const {data: response} = await axios.post('http://localhost:8000/api/users/', regObject);
+            const {data: response} = await axios.post('/api/users/', regObject);
              localStorage.setItem('_userId', response.token);
             setTimeout(() => {
                 this.setState({loading:false});

@@ -13,7 +13,7 @@ class TodoDetail extends Component {
         const {id} = this.props.match.params;
         const userId = localStorage.getItem('_userId')
         try{
-            const {data:todo} = await axios.get(`http://localhost:8000/api/todos/${id}`, {
+            const {data:todo} = await axios.get(`/api/todos/${id}`, {
                 headers:{'Authorization': `JWT ${userId}`}
             });
             this.setState({todo})

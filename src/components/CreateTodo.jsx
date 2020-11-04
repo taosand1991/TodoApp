@@ -52,7 +52,7 @@ class CreateTodo extends Component {
             author: user.user_id
         };
         try{
-            await axios.post('http://localhost:8000/api/todos/', todoObjects, {
+            await axios.post('/api/todos/', todoObjects, {
                 headers:{'Authorization': `JWT ${userId}`}
             });
             loadTodos()

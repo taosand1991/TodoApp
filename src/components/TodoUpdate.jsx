@@ -21,7 +21,7 @@ class TodoUpdate extends Component {
         const {id} = this.props.match.params;
         const userId = localStorage.getItem('_userId');
         try{
-           const {data:todos} = await axios.get(`http://localhost:8000/api/todos/${id}/`, {
+           const {data:todos} = await axios.get(`/api/todos/${id}/`, {
                headers:{'Authorization': `JWT ${userId}`}
            }) ;
            console.log(todos)
@@ -78,7 +78,7 @@ class TodoUpdate extends Component {
             author: user.user_id
         };
         try{
-            await axios.put(`http://localhost:8000/api/todos/${id}/`, todoUpdateObject, {
+            await axios.put(`/api/todos/${id}/`, todoUpdateObject, {
                 headers:{'Authorization': `JWT ${userId}`}
             });
             loadTodos();

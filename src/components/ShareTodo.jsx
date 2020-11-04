@@ -26,7 +26,7 @@ class ShareTodo extends Component {
             username : username[index]
         };
         try{
-            await axios.post(`http://localhost:8000/api/notifications/${todoId}/`, userObject, {
+            await axios.post(`/api/notifications/${todoId}/`, userObject, {
             headers:{'Authorization' : `JWT ${userId}`}
         });
             setTimeout(() => {

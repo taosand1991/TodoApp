@@ -22,7 +22,7 @@ class TodoList extends Component {
                 completed:true,
             };
             try{
-                await axios.patch(`http://localhost:8000/api/todos/${todo.id}/`, todoObject, {
+                await axios.patch(`/api/todos/${todo.id}/`, todoObject, {
                     headers:{'Authorization': `JWT ${userId}`}
                 });
                 loadTodos()
@@ -45,7 +45,7 @@ class TodoList extends Component {
         this.setState({loading:true})
         const userId = localStorage.getItem('_userId');
         try{
-            await axios.delete(`http://localhost:8000/api/todos/${id}/`, {
+            await axios.delete(`/api/todos/${id}/`, {
                 headers:{'Authorization': `JWT ${userId}`}
             });
             setTimeout(() => {
