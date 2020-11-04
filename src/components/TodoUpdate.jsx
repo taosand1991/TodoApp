@@ -24,7 +24,7 @@ class TodoUpdate extends Component {
            const {data:todos} = await axios.get(`/api/todos/${id}/`, {
                headers:{'Authorization': `JWT ${userId}`}
            }) ;
-           console.log(todos)
+           console.log(todos);
            const todo_attributes = {...this.state.todo_attributes};
            todo_attributes['title'] = todos.title;
            todo_attributes['description'] = todos.description;

@@ -7,6 +7,7 @@ jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 
 
+# user serializer class to make Restful API for frontend consumption
 class UserSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(style={'input_style': 'password'}, write_only=True)
     token = serializers.SerializerMethodField()
@@ -53,3 +54,5 @@ class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification
         fields = ['id', 'sender', 'recipient', 'todo_item', 'time_stamp', 'message']
+
+
