@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn django_chat.wsgi --log-file -
+web: gunicorn Todo_App.wsgi --log-file -
