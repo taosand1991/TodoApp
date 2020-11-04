@@ -9,6 +9,7 @@ import jwtDecode from 'jwt-decode';
 import Logout from "./Logout";
 import axios from 'axios'
 import TodoUpdate from "./TodoUpdate";
+import ProtectedRoute from "../authentication/ProtectedRoute";
 
 class MainComponent extends Component {
     constructor(props) {
@@ -107,7 +108,7 @@ class MainComponent extends Component {
                     <Switch>
                         <Route path='/todo/edit/:id' component={TodoUpdate}/>
                         <Route path='/todo/:id' component={TodoDetail}/>
-                        <Route path='/login' component={Login}/>
+                        <ProtectedRoute path='/login' component={Login}/>
                         <Route path='/logout' component={Logout}/>
                         <Route path='/todos' component={Todo}/>
                         <Redirect to='login'/>
