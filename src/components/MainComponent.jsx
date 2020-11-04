@@ -41,7 +41,7 @@ class MainComponent extends Component {
     loadTodos = async() => {
         const userId = localStorage.getItem('_userId')
         try{
-            const {data: todos} = await axios.get('http://localhost:8000/api/todos', {
+            const {data: todos} = await axios.get('http://localhost:8000/api/todos/', {
                 headers:{'Authorization': `JWT ${userId}`}
             });
             this.setState({todos})
@@ -53,7 +53,7 @@ class MainComponent extends Component {
     loadCategories = async() => {
         const userId = localStorage.getItem('_userId')
         try{
-            const {data: categories} = await axios.get('http://localhost:8000/api/categories', {
+            const {data: categories} = await axios.get('http://localhost:8000/api/categories/', {
                 headers:{'Authorization': `JWT ${userId}`}
             });
             this.setState({categories})
@@ -73,7 +73,7 @@ class MainComponent extends Component {
     loadNotifications = async() => {
         const userId = localStorage.getItem('_userId')
        try{
-             const {data:notifications} = await axios.get('http://localhost:8000/api/notifications', {
+             const {data:notifications} = await axios.get('http://localhost:8000/api/notifications/', {
             headers:{'Authorization': `JWT ${userId}`}
         })
 

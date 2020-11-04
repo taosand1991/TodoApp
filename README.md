@@ -6,7 +6,7 @@
 ##### `Django` as the backend support and `React` as the front end support
 
 ##### *USAGE*
-
+##### clone the project and cd into `TodoApp` run `yarn start` to start the frontend and `python manage.py runserver` to start the backend
 
 
 
