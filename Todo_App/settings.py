@@ -63,8 +63,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Todo_App.wsgi.application'
 
-if settings.DEBUG:
-    DATABASES = {
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': "Todo",
@@ -74,10 +73,8 @@ if settings.DEBUG:
             "PORT": "5432"
         }
     }
-    db_from_env = dj_database_url.config(conn_max_age=600)
-    DATABASES["default"].update(db_from_env)
-else:
-    from Todo_App.production import *
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES["default"].update(db_from_env)
 
 
 AUTH_PASSWORD_VALIDATORS = [
