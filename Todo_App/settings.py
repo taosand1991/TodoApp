@@ -2,6 +2,7 @@ from pathlib import Path
 from django.conf import settings
 import os
 from dotenv import load_dotenv
+import dj_database_url
 import datetime
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -73,6 +74,8 @@ if settings.DEBUG:
             "PORT": "5432"
         }
     }
+    db_from_env = dj_database_url.config(conn_max_age=600)
+    DATABASES["default"].update(db_from_env)
 else:
     from Todo_App.production import *
 
